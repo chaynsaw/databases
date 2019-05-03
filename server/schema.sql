@@ -13,12 +13,6 @@ USE chat;
 /* Create other tables and define schemas for them here! */
 
 DROP TABLE IF EXISTS `rooms`;
-		
-CREATE TABLE `rooms` (
-  `id` INTEGER AUTO_INCREMENT,
-  `roomname` VARCHAR(50),
-  PRIMARY KEY (`id`)
-);
 
 -- ---
 -- Table 'users'
@@ -31,7 +25,7 @@ CREATE TABLE `users` (
   `id` INTEGER AUTO_INCREMENT,
   `username` VARCHAR(15),
   PRIMARY KEY (`id`),
-KEY (`username`, `id`)
+  KEY (`username`, `id`)
 );
 
 -- ---
@@ -44,11 +38,10 @@ DROP TABLE IF EXISTS `messages`;
 CREATE TABLE `messages` (
   `id` INTEGER AUTO_INCREMENT,
   `text` VARCHAR(255),
-  `room_id` INTEGER,
+  `roomname` VARCHAR(40),
   `user_id` INTEGER(25),
-  `created_at` TIMESTAMP,
-  PRIMARY KEY (`id`)
 );
+  PRIMARY KEY (`id`)
 
 
 
